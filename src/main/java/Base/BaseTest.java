@@ -4,11 +4,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 public class BaseTest {
     public static WebDriver webDriver;
-    @Before
+    @BeforeSuite
     public void setUp(){
 
         System.setProperty("webdriver.geck.driver","drivers/geckdrive");
@@ -17,7 +17,7 @@ public class BaseTest {
         webDriver.manage().window().maximize();
 
     }
-    @After
+    @AfterSuite
     public void close(){
         webDriver.quit();
     }

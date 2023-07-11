@@ -9,5 +9,8 @@
         <module name="DemoTestAutomation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DemoTestAutomation (1)" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

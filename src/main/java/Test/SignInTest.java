@@ -6,17 +6,18 @@ import org.testng.annotations.Test;
 
 public class SignInTest extends BaseTest {
 
-    @Test(description = "Success- Search a Product By Entering a ASIN Value")
-    public void TC001(){
-        SignInPage signInPage=new SignInPage(webDriver);
+    @Test
+    public void TC001() {
+        SignInPage signInPage = new SignInPage(webDriver);
+        signInPage.cerezButon();
         signInPage.ProductSearch("telefon");
-    }
-    @Test(description = "Success- Navigate To HomePage")
-    public void TC002(){
-        SignInPage signInPage=new SignInPage(webDriver);
-        signInPage.NavigateHomePage();
+        signInPage.clickButton();
 
     }
 
-
+    @Test
+    public void TC002() {
+        SignInPage signInPage = new SignInPage(webDriver);
+        signInPage.clickButton();
+    }
 }

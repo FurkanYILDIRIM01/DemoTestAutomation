@@ -14,17 +14,23 @@ public class SignInPage{
         this.webDriver=driver;
     }
 
-    @Step("Search A Product By ASIN")
     public SignInPage ProductSearch(String text){
         WebElement search = webDriver.findElement(By.id("twotabsearchtextbox"));
         search.sendKeys(text);
 
         return this;
     }
-    @Step("Navigates To HomePage")
-    public SignInPage NavigateHomePage(){
-        webDriver.navigate().to("https://www.amazon.com.tr/");
+    public SignInPage clickButton(){
+        WebElement aramaButon = webDriver.findElement(By.id("nav-search-submit-button"));
+        aramaButon.click();
+        return this;
+    }
+    public SignInPage cerezButon(){
+        WebElement cerezKabulEt = webDriver.findElement(By.id("sp-cc-accept"));
 
+        if(cerezKabulEt.isDisplayed()== true){
+            cerezKabulEt.click();
+        }
         return this;
     }
 }

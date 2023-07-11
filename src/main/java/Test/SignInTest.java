@@ -9,15 +9,32 @@ public class SignInTest extends BaseTest {
     @Test
     public void TC001() {
         SignInPage signInPage = new SignInPage(webDriver);
-        signInPage.cerezButon();
-        signInPage.ProductSearch("telefon");
-        signInPage.clickButton();
+        signInPage.cerezButon()
+                .ProductSearch("Samsung Galaxy A23 128 GB, 6 GB RAM Cep Telefonu, Siyah (Samsung Türkiye Garantili)")
+                .clickButton()
+                .clickOnProductDescription()
+                .checkProductDescriptionText("Samsung Galaxy A23 128 GB, 6 GB RAM Cep Telefonu, Siyah (Samsung Türkiye Garantili)");
 
     }
 
     @Test
     public void TC002() {
         SignInPage signInPage = new SignInPage(webDriver);
-        signInPage.clickButton();
+        signInPage.cerezButon()
+                .ProductSearch("Samsung Galaxy A23 128 GB, 6 GB RAM Cep Telefonu, Siyah (Samsung Türkiye Garantili)")
+                .clickButton()
+                .clickOnProductDescription()
+                .checkProductDescriptionText("Samsung Galaxy A23 128 GB, 6 GB RAM Cep Telefonu, Siyah (Samsung Türkiye Garantili)")
+                .addProductToCart()
+                .checkProductAddedText("Sepete Eklendi")
+                .navigateToCart()
+                .checkProductInCart("Samsung Galaxy A23 128 GB, 6 GB RAM Cep Telefonu, Siyah (Samsung Türkiye Garantili)");
+
     }
+    @Test
+    public void TC003(){
+
+
+    }
+
 }
